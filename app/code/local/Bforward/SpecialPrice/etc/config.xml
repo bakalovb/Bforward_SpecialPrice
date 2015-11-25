@@ -1,0 +1,116 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * @package    Bforward_SpecialPrice
+ * @author     Bogdan Bakalov <bakalov.bogdan@gmail.com>
+ */
+-->
+<config>
+    <modules>
+        <bforward_special_price>
+            <version>0.1.0</version>
+        </bforward_special_price>
+    </modules>
+    <global>
+        <models>
+            <bforward_special_price>
+                <class>Bforward_SpecialPrice_Model</class>
+            </bforward_special_price>
+        </models>
+        <blocks>
+            <bforward_special_price>
+                <class>Bforward_SpecialPrice_Block</class>
+            </bforward_special_price>
+        </blocks>
+        <helpers>
+            <bforward_special_price>
+                <class>Bforward_SpecialPrice_Helper</class>
+            </bforward_special_price>
+        </helpers>
+    </global>
+    <admin>
+        <routers>
+            <adminhtml>
+                <args>
+                    <modules>
+                        <bforward_special_price before="Mage_Adminhtml">Bforward_SpecialPrice_Adminhtml</bforward_special_price>
+                    </modules>
+                </args>
+            </adminhtml>
+        </routers>
+    </admin>
+    <frontend>
+        <layout>
+            <updates>
+                <bforward_special_price>
+                    <file>bforward_special_price.xml</file>
+                </bforward_special_price>
+            </updates>
+        </layout>
+        <routers>
+            <bforward_special_price>
+                <use>standard</use>
+                <args>
+                    <module>Bforward_SpecialPrice</module>
+                    <frontName>special_price</frontName>
+                </args>
+            </bforward_special_price>
+        </routers>
+        <events>
+            <page_block_html_topmenu_gethtml_before>
+                <observers>
+                    <bforward_special_price>
+                        <class>bforward_special_price/observer</class>
+                        <method>addToTopmenu</method>
+                    </bforward_special_price>
+                </observers>
+            </page_block_html_topmenu_gethtml_before>
+        </events>
+        <translate>
+            <modules>
+                <bforward_special_price>
+                    <files>
+                        <default>Bforward_SpecialPrice.csv</default>
+                    </files>
+                </bforward_special_price>
+            </modules>
+        </translate>
+    </frontend>
+    <adminhtml>
+        <translate>
+            <modules>
+                <bforward_special_price>
+                    <files>
+                        <default>Bforward_SpecialPrice.csv</default>
+                    </files>
+                </bforward_special_price>
+            </modules>
+        </translate>
+        <acl>
+            <resources>
+                <admin>
+                    <children>
+                        <system>
+                            <children>
+                                <config>
+                                    <children>
+                                        <special_price>
+                                            <title>Bforward Special Price Config</title>
+                                        </special_price>
+                                    </children>
+                                </config>
+                            </children>
+                        </system>
+                    </children>
+                </admin>
+            </resources>
+        </acl>
+    </adminhtml>
+    <default>
+        <special_price>
+            <form>
+                <item_name>Special prices</item_name>
+            </form>
+        </special_price>
+    </default>
+</config>

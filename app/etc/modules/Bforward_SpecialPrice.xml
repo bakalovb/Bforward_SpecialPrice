@@ -1,0 +1,9 @@
+<?xml version="1.0"?>
+<config>
+    <modules>
+        <Bforward_SpecialPrice>
+            <active>true</active>
+            <codePool>local</codePool>
+        </Bforward_SpecialPrice>
+    </modules>
+</config>

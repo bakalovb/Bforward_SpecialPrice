@@ -1,0 +1,43 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * @package    Bforward_SpecialPrice
+ * @author     Bogdan Bakalov <bakalov.bogdan@gmail.com>
+ */
+-->
+<config>
+    <menu>
+        <report>
+            <children>
+                <bforward translate="title" module="bforward_special_price">
+                    <title>Bforward</title>
+                    <children>
+                        <special_price translate="title">
+                            <title>Special Price Report</title>
+                            <action>adminhtml/specialPrice</action>
+                        </special_price>
+                    </children>
+                </bforward>
+            </children>
+        </report>
+    </menu>
+    <acl>
+        <resources>
+            <admin>
+                <children>
+                    <report>
+                        <children>
+                            <products>
+                                <children>
+                                    <bforward_special_price>
+                                        <title>Bforward Special Price Report</title>
+                                    </bforward_special_price>
+                                </children>
+                            </products>
+                        </children>
+                    </report>
+                </children>
+            </admin>
+        </resources>
+    </acl>
+</config>
